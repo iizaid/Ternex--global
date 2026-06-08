@@ -38,7 +38,7 @@ a {
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  background-image: url("/images/hero-bg.png");
+  background-image: url("/images/WebBG.jpg");
   background-size: cover;
   background-position: right center;
 }
