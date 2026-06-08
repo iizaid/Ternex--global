@@ -39,8 +39,8 @@ a {
   display: flex;
   flex-direction: column;
   background-image: url("/images/WebBG.jpg");
-  background-size: 120%;
-  background-position: right 0% center;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -391,17 +391,17 @@ a {
 
 @media (max-width: 560px) {
   .hero {
-    background-size: 200%;
-    background-position: 65% center;
+    background-size: cover;
+    background-position: 72% center;
   }
 
   .hero::before {
     background: linear-gradient(
       105deg,
       rgba(247, 234, 211, 1) 0%,
-      rgba(247, 234, 211, 0.98) 45%,
-      rgba(247, 234, 211, 0.70) 70%,
-      rgba(247, 234, 211, 0.10) 100%
+      rgba(247, 234, 211, 0.96) 42%,
+      rgba(247, 234, 211, 0.55) 68%,
+      rgba(247, 234, 211, 0.05) 100%
     );
   }
 
