@@ -4,26 +4,22 @@ import { useEffect, useState } from "react";
 
 const navLinks = ["Home", "Products", "About", "Contact"];
 
-// Premium SVG text logo — no image dependency, always sharp at any resolution
+// Clean TERNEX wordmark — serif, no image dependency
 function TernexLogo() {
   return (
     <svg
-      viewBox="0 0 220 48"
+      viewBox="0 0 190 40"
       aria-label="TERNEX"
       className="navbar-logo-svg"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Decorative diamond accent */}
-      <rect x="0" y="20" width="8" height="8" rx="1.5" fill="#c98222" transform="rotate(45 4 24)" />
-      {/* TERNEX wordmark */}
       <text
-        x="20"
-        y="34"
+        x="0"
+        y="30"
         fontFamily="Georgia, 'Times New Roman', serif"
-        fontSize="28"
+        fontSize="26"
         fontWeight="700"
-        letterSpacing="6"
+        letterSpacing="5"
         fill="#141a20"
       >
         TERNEX
