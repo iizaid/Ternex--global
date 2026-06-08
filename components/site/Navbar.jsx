@@ -31,8 +31,11 @@ function TernexLogo() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Mount flag prevents hydration mismatch from browser-cached chunks
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -63,10 +66,12 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop auth */}
-          <div className="nav-auth">
-            <a className="nav-btn nav-btn-login" href="/admin/login">Admin</a>
-          </div>
+          {/* Desktop auth — client-only to prevent hydration mismatch */}
+          {mounted && (
+            <div className="nav-auth">
+              <a className="nav-btn nav-btn-login" href="/admin/login">Admin</a>
+            </div>
+          )}
 
           {/* Hamburger — mobile only */}
           <button
@@ -100,11 +105,14 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
-          <div className="mobile-nav__actions">
-            <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/admin/login" onClick={closeMenu}>
-              Admin
-            </a>
-          </div>
+          {/* Mobile auth — client-only to prevent hydration mismatch */}
+          {mounted && (
+            <div className="mobile-nav__actions">
+              <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/admin/login" onClick={closeMenu}>
+                Admin
+              </a>
+            </div>
+          )}
         </div>
       </div>
 
