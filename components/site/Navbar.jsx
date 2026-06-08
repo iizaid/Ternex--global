@@ -65,8 +65,7 @@ export default function Navbar() {
 
           {/* Desktop auth */}
           <div className="nav-auth">
-            <a className="nav-btn nav-btn-login" href="#login">Log In</a>
-            <a className="nav-btn nav-btn-signup" href="#signup">Sign Up</a>
+            <a className="nav-btn nav-btn-login" href="/admin/login">Admin</a>
           </div>
 
           {/* Hamburger — mobile only */}
@@ -102,11 +101,8 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mobile-nav__actions">
-            <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="#login" onClick={closeMenu}>
-              Log In
-            </a>
-            <a className="nav-btn nav-btn-signup mobile-nav__btn-signup" href="#signup" onClick={closeMenu}>
-              Sign Up
+            <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/admin/login" onClick={closeMenu}>
+              Admin
             </a>
           </div>
         </div>
