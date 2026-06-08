@@ -378,9 +378,6 @@ a {
     display: none;
   }
 
-  .hamburger {
-    display: flex;
-  }
 
   .brand img {
     width: 122px;
@@ -515,6 +512,12 @@ a {
 
 .hamburger--open .hamburger__bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .hamburger {
+    display: flex;
+  }
 }
 
 /* =============================================
