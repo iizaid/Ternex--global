@@ -1,23 +1,47 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 const navLinks = ["Home", "Products", "About", "Contact"];
+
+// Premium SVG text logo — no image dependency, always sharp at any resolution
+function TernexLogo() {
+  return (
+    <svg
+      viewBox="0 0 220 48"
+      aria-label="TERNEX"
+      className="navbar-logo-svg"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Decorative diamond accent */}
+      <rect x="0" y="20" width="8" height="8" rx="1.5" fill="#c98222" transform="rotate(45 4 24)" />
+      {/* TERNEX wordmark */}
+      <text
+        x="20"
+        y="34"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="28"
+        fontWeight="700"
+        letterSpacing="6"
+        fill="#141a20"
+      >
+        TERNEX
+      </text>
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -29,8 +53,8 @@ export default function Navbar() {
     <>
       <div className={`navbar-wrapper ${scrolled ? "scrolled" : ""}`}>
         <nav className="navbar" aria-label="Primary navigation">
-          <a className="brand" href="#" aria-label="TERNEX home" onClick={closeMenu}>
-            <Image src="/images/ternex-logo.png" alt="TERNEX" width={3382} height={660} priority />
+          <a className="brand" href="#home" aria-label="TERNEX home" onClick={closeMenu}>
+            <TernexLogo />
           </a>
 
           {/* Desktop nav links */}
@@ -43,13 +67,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop auth buttons */}
+          {/* Desktop auth */}
           <div className="nav-auth">
             <a className="nav-btn nav-btn-login" href="#login">Log In</a>
             <a className="nav-btn nav-btn-signup" href="#signup">Sign Up</a>
           </div>
 
-          {/* Hamburger button — mobile only */}
+          {/* Hamburger — mobile only */}
           <button
             className={`hamburger ${menuOpen ? "hamburger--open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -92,13 +116,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Backdrop */}
       {menuOpen && (
-        <div
-          className="mobile-drawer__backdrop"
-          onClick={closeMenu}
-          aria-hidden="true"
-        />
+        <div className="mobile-drawer__backdrop" onClick={closeMenu} aria-hidden="true" />
       )}
     </>
   );

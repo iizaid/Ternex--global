@@ -18,6 +18,17 @@ const contactLinks = [
       </svg>
     ),
   },
+  {
+    label: "Amman, Jordan",
+    href: "https://maps.app.goo.gl/f4fCF1sQ7crL823d8",
+    external: true,
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 10c0 6-8 13-8 13S4 16 4 10a8 8 0 1 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
+  },
 ];
 
 const socialLinks = [
@@ -36,8 +47,10 @@ const socialLinks = [
     href: "https://www.instagram.com/ternex._/",
     social: "instagram",
     icon: (
-      <svg viewBox="0 0 90 90" aria-hidden="true">
-        <path d="M60 45a15 15 0 1 0 -4.395 10.61A14.4 14.4 0 0 0 60 45.225l-0.004 -0.237zm8.1 0a23.006 23.006 0 1 1 -6.738 -16.347 22.2 22.2 0 0 1 6.742 15.96l-0.004 0.41v-0.02zm6.327 -24.022v0.008a5.4 5.4 0 1 1 -1.582 -3.818 5.177 5.177 0 0 1 1.556 3.705v0.11zm-29.4 -12.9 -4.482 -0.03q-4.072 -0.03 -6.184 0t-5.655 0.176a47.143 47.143 0 0 0 -6.312 0.638l0.273 -0.038a23.571 23.571 0 0 0 -4.362 1.136l0.16 -0.052a15.446 15.446 0 0 0 -8.52 8.452l-0.038 0.102a22.543 22.543 0 0 0 -1.065 4.062l-0.02 0.138a45 45 0 0 0 -0.597 5.96l-0.004 0.08q-0.147 3.548 -0.176 5.655t0 6.184 0.03 4.482 -0.03 4.482 0 6.184 0.176 5.655c0.075 2.193 0.292 4.275 0.638 6.312l-0.038 -0.273a23.571 23.571 0 0 0 1.136 4.362l-0.052 -0.16a15.446 15.446 0 0 0 8.452 8.52l0.102 0.038c1.192 0.446 2.606 0.82 4.062 1.065l0.138 0.02c1.758 0.308 3.84 0.525 5.955 0.597l0.08 0.004q3.548 0.147 5.655 0.176t6.184 0l4.455 -0.09 4.482 0.03q4.072 0.03 6.184 0t5.655 -0.176a47.143 47.143 0 0 0 6.312 -0.638l-0.273 0.038a23.571 23.571 0 0 0 4.362 -1.136l-0.16 0.052a15.446 15.446 0 0 0 8.52 -8.452l0.038 -0.102c0.446 -1.192 0.82 -2.606 1.065 -4.062l0.02 -0.138c0.308 -1.758 0.525 -3.84 0.597 -5.955l0.004 -0.08q0.147 -3.548 0.176 -5.655t0 -6.184 -0.03 -4.482 0.03 -4.482 0 -6.184 -0.176 -5.655a47.143 47.143 0 0 0 -0.638 -6.312l0.038 0.273a23.743 23.743 0 0 0 -1.136 -4.362l0.052 0.16a15.446 15.446 0 0 0 -8.452 -8.52l-0.102 -0.038a22.543 22.543 0 0 0 -4.062 -1.065l-0.138 -0.02a45 45 0 0 0 -5.955 -0.597l-0.08 -0.004q-3.548 -0.147 -5.655 -0.176t-6.184 0zM90 45q0 13.418 -0.3 18.574a24.9 24.9 0 0 1 -26.194 26.13l0.06 0.004q-5.157 0.3 -18.574 0.3t-18.574 -0.3A24.9 24.9 0 0 1 0.286 63.514l-0.004 0.06q-0.3 -5.157 -0.3 -18.574t0.3 -18.574A24.9 24.9 0 0 1 26.478 0.297l-0.058 -0.005q5.157 -0.3 18.574 -0.3t18.574 0.3a24.9 24.9 0 0 1 26.13 26.194l0.004 -0.06Q90 31.578 90 45" />
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
       </svg>
     ),
   },
@@ -51,43 +64,52 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    label: "Mail",
-    href: "mailto:sales@ternex.global",
-    social: "mail",
-    icon: (
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M20 80A12 12 0 0 1 8 68v-40A12 12 0 0 1 20 16h56A12 12 0 0 1 88 28v40A12 12 0 0 1 76 80zm10.5 -47.12a4 4 0 1 0 -5.001 6.24l15.001 12.004a12 12 0 0 0 15.001 0l15.001 -12a4 4 0 1 0 -5.001 -6.247l-15.001 12a4 4 0 0 1 -5.001 0z" />
-      </svg>
-    ),
-  },
+];
+
+const quickLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Products", href: "#products" },
+  { label: "About Us", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function FooterSection() {
   return (
     <footer className="site-footer" id="contact">
+
+      {/* Top wave divider */}
+      <div className="site-footer__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 32C240 56 480 0 720 24C960 48 1200 8 1440 32V56H0V32Z"
+            fill="#08090a"
+          />
+        </svg>
+      </div>
+
       <div className="site-footer__inner">
+
+        {/* Brand column */}
         <div className="site-footer__brand">
-          <span className="site-footer__logo">TERNEX</span>
-          <p>
-            Food import and distribution from Amman, connecting trusted global brands with the
-            Jordanian market.
+          {/* SVG logo in footer — white version */}
+          <svg viewBox="0 0 220 48" aria-label="TERNEX" className="footer-logo-svg" fill="none">
+            <rect x="0" y="20" width="8" height="8" rx="1.5" fill="#d99a32" transform="rotate(45 4 24)" />
+            <text
+              x="20"
+              y="34"
+              fontFamily="Georgia, 'Times New Roman', serif"
+              fontSize="28"
+              fontWeight="700"
+              letterSpacing="6"
+              fill="#ffffff"
+            >
+              TERNEX
+            </text>
+          </svg>
+          <p className="site-footer__tagline">
+            Connecting Jordan with the world's finest food brands — from Amman, with excellence.
           </p>
-        </div>
-
-        <div className="site-footer__group">
-          <h2>Contact us</h2>
-          <div className="footer-contact">
-            {contactLinks.map((link) => (
-              <a key={link.href} href={link.href} className="footer-contact__link">
-                <span className="footer-contact__icon">{link.icon}</span>
-                <span>{link.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="site-footer__group">
+          {/* Social icons */}
           <ul className="footer-social" aria-label="Social media links">
             {socialLinks.map((link) => (
               <li className="footer-social__item" key={link.label}>
@@ -96,8 +118,8 @@ export default function FooterSection() {
                   aria-label={link.label}
                   data-social={link.social}
                   className="footer-social__link"
-                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {link.icon}
                 </a>
@@ -105,13 +127,50 @@ export default function FooterSection() {
             ))}
           </ul>
         </div>
+
+        {/* Quick links */}
+        <div className="site-footer__group">
+          <h2 className="site-footer__group-title">Quick Links</h2>
+          <nav aria-label="Footer navigation">
+            <ul className="footer-nav-list">
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="footer-nav-link">
+                    <span className="footer-nav-arrow" aria-hidden="true">›</span>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Contact */}
+        <div className="site-footer__group">
+          <h2 className="site-footer__group-title">Get in Touch</h2>
+          <div className="footer-contact">
+            {contactLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="footer-contact__link"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+              >
+                <span className="footer-contact__icon">{link.icon}</span>
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
 
+      {/* Bottom bar */}
       <div className="site-footer__bottom">
         <span>© 2026 TERNEX. All rights reserved.</span>
-        <a href="https://maps.app.goo.gl/f4fCF1sQ7crL823d8" target="_blank" rel="noopener noreferrer">
-          Amman, Jordan
-        </a>
+        <span className="footer-bottom__divider" aria-hidden="true">·</span>
+        <span>Food Import & Distribution · Amman, Jordan</span>
       </div>
     </footer>
   );
