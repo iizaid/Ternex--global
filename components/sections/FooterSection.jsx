@@ -33,7 +33,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/ternex.global",
+    href: "https://www.instagram.com/ternex._/",
     social: "instagram",
     icon: (
       <svg viewBox="0 0 90 90" aria-hidden="true">
