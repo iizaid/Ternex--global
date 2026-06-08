@@ -37,7 +37,6 @@ const nextConfig = {
 
   // Experimental: faster builds + CSS optimisation
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ["next/font"],
   },
 };
