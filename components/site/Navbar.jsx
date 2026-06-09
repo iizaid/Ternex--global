@@ -69,7 +69,8 @@ export default function Navbar() {
           {/* Desktop auth — client-only to prevent hydration mismatch */}
           {mounted && (
             <div className="nav-auth">
-              <a className="nav-btn nav-btn-login" href="/admin/login">Admin</a>
+              <a className="nav-btn nav-btn-login" href="/login">Log In</a>
+              <a className="nav-admin-link" href="/admin/login">Admin</a>
             </div>
           )}
 
@@ -108,8 +109,11 @@ export default function Navbar() {
           {/* Mobile auth — client-only to prevent hydration mismatch */}
           {mounted && (
             <div className="mobile-nav__actions">
-              <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/admin/login" onClick={closeMenu}>
-                Admin
+              <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/login" onClick={closeMenu}>
+                Log In
+              </a>
+              <a className="mobile-nav__admin-link" href="/admin/login" onClick={closeMenu}>
+                Admin access
               </a>
             </div>
           )}

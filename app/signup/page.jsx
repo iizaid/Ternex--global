@@ -2,12 +2,12 @@ import AuthForm from "@/components/auth/AuthForm";
 import { redirectIfAuthenticated } from "@/lib/auth";
 
 export const metadata = {
-  title: "Admin Login | TERNEX",
-  description: "Secure TERNEX admin access.",
+  title: "Sign Up | TERNEX",
+  description: "Create your TERNEX customer account.",
 };
 
-export default async function AdminLoginPage() {
+export default async function SignupPage() {
   await redirectIfAuthenticated();
 
-  return <AuthForm mode="admin" />;
+  return <AuthForm mode="signup" />;
 }
