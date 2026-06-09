@@ -209,17 +209,6 @@ a {
   transform: translateY(-1px);
 }
 
-.nav-admin-link {
-  color: rgba(20, 26, 32, 0.52);
-  font-size: 13px;
-  font-weight: 700;
-  transition: color 180ms ease;
-}
-
-.nav-admin-link:hover {
-  color: var(--gold-dark);
-}
-
 .nav-btn-signup {
   min-height: 48px;
   padding: 12px 28px;
@@ -610,19 +599,6 @@ a {
 
 .mobile-nav__btn-login:hover {
   border-color: var(--gold-dark);
-  color: var(--gold-dark);
-}
-
-.mobile-nav__admin-link {
-  width: fit-content;
-  align-self: center;
-  color: rgba(20, 26, 32, 0.55);
-  font-size: 13px;
-  font-weight: 700;
-  transition: color 180ms ease;
-}
-
-.mobile-nav__admin-link:hover {
   color: var(--gold-dark);
 }
 

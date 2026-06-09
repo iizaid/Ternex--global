@@ -67,6 +67,21 @@ export default function AuthForm({ mode }) {
     );
   }
 
+  async function getAdminRole(userId) {
+    const { data: adminProfile, error: adminError } = await supabase
+      .from("admin_profiles")
+      .select("role")
+      .eq("id", userId)
+      .eq("role", "admin")
+      .maybeSingle();
+
+    if (adminError) {
+      return false;
+    }
+
+    return adminProfile?.role === "admin";
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     setError("");
@@ -112,20 +127,21 @@ export default function AuthForm({ mode }) {
         return;
       }
 
-      if (isAdmin) {
-        const { data: adminProfile, error: adminError } = await supabase
-          .from("admin_profiles")
-          .select("role")
-          .eq("id", data.user.id)
-          .eq("role", "admin")
-          .maybeSingle();
+      const isAdminUser = await getAdminRole(data.user.id);
 
-        if (adminError || adminProfile?.role !== "admin") {
+      if (isAdmin) {
+        if (!isAdminUser) {
           await supabase.auth.signOut();
           setError("This account is not authorized for the admin portal.");
           return;
         }
 
+        router.push("/admin");
+        router.refresh();
+        return;
+      }
+
+      if (isAdminUser) {
         router.push("/admin");
         router.refresh();
         return;

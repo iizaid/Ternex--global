@@ -138,6 +138,12 @@ ALTER TABLE products ENABLE ROW LEVEL SECURITY;
 ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE order_items ENABLE ROW LEVEL SECURITY;
 
+-- Direct anonymous order writes are intentionally disabled for now.
+-- Future guest order requests should be handled by a server route/action that
+-- validates cart lines, snapshots product data, and inserts the order safely.
+DROP POLICY IF EXISTS "Public can insert orders" ON orders;
+DROP POLICY IF EXISTS "Public can insert order items" ON order_items;
+
 -- Admin Profiles Policies
 DO $$
 BEGIN
@@ -256,18 +262,6 @@ BEGIN
     SELECT 1 FROM pg_policies
     WHERE schemaname = 'public'
       AND tablename = 'orders'
-      AND policyname = 'Public can insert orders'
-  ) THEN
-    CREATE POLICY "Public can insert orders"
-      ON orders
-      FOR INSERT
-      WITH CHECK (true);
-  END IF;
-
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies
-    WHERE schemaname = 'public'
-      AND tablename = 'orders'
       AND policyname = 'Users can view their own orders'
   ) THEN
     CREATE POLICY "Users can view their own orders"
@@ -299,18 +293,6 @@ END $$;
 -- Order Items Policies
 DO $$
 BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies
-    WHERE schemaname = 'public'
-      AND tablename = 'order_items'
-      AND policyname = 'Public can insert order items'
-  ) THEN
-    CREATE POLICY "Public can insert order items"
-      ON order_items
-      FOR INSERT
-      WITH CHECK (true);
-  END IF;
-
   IF NOT EXISTS (
     SELECT 1 FROM pg_policies
     WHERE schemaname = 'public'

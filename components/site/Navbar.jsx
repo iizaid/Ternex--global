@@ -31,11 +31,8 @@ function TernexLogo() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  // Mount flag prevents hydration mismatch from browser-cached chunks
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -66,13 +63,10 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop auth — client-only to prevent hydration mismatch */}
-          {mounted && (
-            <div className="nav-auth">
-              <a className="nav-btn nav-btn-login" href="/login">Log In</a>
-              <a className="nav-admin-link" href="/admin/login">Admin</a>
-            </div>
-          )}
+          <div className="nav-auth">
+            <a className="nav-btn nav-btn-login" href="/login">Log In</a>
+            <a className="nav-btn nav-btn-signup" href="/signup">Sign Up</a>
+          </div>
 
           {/* Hamburger — mobile only */}
           <button
@@ -106,17 +100,14 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
-          {/* Mobile auth — client-only to prevent hydration mismatch */}
-          {mounted && (
-            <div className="mobile-nav__actions">
-              <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/login" onClick={closeMenu}>
-                Log In
-              </a>
-              <a className="mobile-nav__admin-link" href="/admin/login" onClick={closeMenu}>
-                Admin access
-              </a>
-            </div>
-          )}
+          <div className="mobile-nav__actions">
+            <a className="nav-btn nav-btn-login mobile-nav__btn-login" href="/login" onClick={closeMenu}>
+              Log In
+            </a>
+            <a className="nav-btn nav-btn-signup mobile-nav__btn-signup" href="/signup" onClick={closeMenu}>
+              Sign Up
+            </a>
+          </div>
         </div>
       </div>
 
